@@ -44,7 +44,7 @@ setTimeout(function () {
     const subtitle = document.querySelector('.main-area');
     subtitle.classList.add('animate__animated');
     subtitle.classList.remove('d-none');
-}, 1400);
+}, 900);
 setTimeout(function () {
     const subtitle = document.querySelector('.slidediv');
     subtitle.classList.remove('d-none');

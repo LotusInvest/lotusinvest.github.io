@@ -250,6 +250,15 @@ i {
 
 
 @media (max-width: 768px) {
+     .circle {
+        width: 12px;
+        height: 12px;
+    }
+
+    .main-area img {
+        width: 80%;
+    }
+
     header {
         display: block;
         text-align: center;

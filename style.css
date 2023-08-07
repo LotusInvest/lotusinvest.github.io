@@ -47,7 +47,11 @@ body {
        .nav-link {
            color: #ffffff !important;
        }
-
+         #locationInput {
+           margin-top: 90px !important;
+           width: 100px !important;
+           /* Add some spacing between input and button */
+       }
    }
 
    @media only screen and (max-width: 1400px) {

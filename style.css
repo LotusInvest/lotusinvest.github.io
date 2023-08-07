@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Tektur&display=swap');
+body {
+       height: 100vh;
+       margin: 0;
+        padding: 0;
+         font-family: 'Tektur',
+         cursive;
+   }
+
+   #markerPanel {
+     display: none;
+   }
+   #map {
+       width: 100%;
+       height: 100%;
+   }
+
+   nav {
+       margin-bottom: 14px;
+       padding: 8px;
+     
+     
+   }
+
+   .container-fluid {
+       background-color: rgb(255, 255, 255);
+       width: 600px;
+   }
+
+   .nav-link {
+       text-transform: uppercase;
+       font-weight: bold;
+       color: #333 !important;
+   }
+
+
+   @media only screen and (max-width: 767px) {
+
+       .container-fluid {
+           width: 120px;
+           font-size: 12px;
+           text-align: center;
+           background-color: #333333;
+
+       }
+
+       .nav-link {
+           color: #ffffff !important;
+       }
+
+   }
+
+   @media only screen and (max-width: 1400px) {
+       #infoPanel {
+           top: 7% !important;
+         
+       }
+
+       
+   }
+
+   @media only screen and (min-width: 767px) and (max-width: 900px) {
+
+
+       .container-fluid {
+           text-align: center;
+           width: 180px;
+           background-color: #333333;
+       }
+
+       .nav-link {
+           color: #ffffff !important;
+       }
+
+
+
+   }
+
+.fixed-top {
+    display: block !important;
+}
+
+.fixed-top div {
+    display: flex !important;
+}
+
+.fixed-top button {
+    margin-left: 15px;
+    margin-top: 10px;
+    border: 1px solid #333;
+}
+
+   #infoPanel {
+       position: fixed;
+       left: 0;
+       top: 6%;
+       display: flex;
+       width: 60px;
+   }
+
+   #infoPanel img {
+       width: 40px;
+       height: 40px;
+       margin-left: 20px;
+   }
+
+   span {
+       font-weight: bold;
+       font-size: 22px;
+   }
+
+
+
+
+/* Style the input and button */
+#locationInput {
+    position: relative;
+    margin-top: 30px;
+    width: 400px;
+    padding: 8px;
+    border: 0.3px solid #000;
+    border-radius: 4px;
+    margin-right: 5px;
+    font-family: 'Tektur',
+    cursive;
+    opacity: 0.8;
+    /* Add some spacing between input and button */
+}
+
+#addMarkerBtn {
+    padding: 2px 28px;
+    opacity: 0.8;
+}
+#addMarkerBtn:hover {
+opacity: 1;
+}
+
+#mouseCoordinates {
+    font-family: 'Roboto',
+    sans-serif;
+    color: rgb(0, 0, 0);
+    margin-bottom: 20px;
+    margin-left: 10px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#deleteMarkerBtn {
+    background: red !important;
+    color: #ffffff;
+}

@@ -180,7 +180,7 @@ span {
 
     .container-fluid {
         width: 120px;
-        font-size: 12px;
+        font-size: 10px !important;
         text-align: center;
         background-color: #333333;
 

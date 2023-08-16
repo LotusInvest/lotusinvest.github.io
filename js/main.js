@@ -337,9 +337,11 @@ function initMap() {
    
 
     function addMarker() {
+    map.addListener('click', function(event) {
+        const lat = event.latLng.lat();
+        const lng = event.latLng.lng();
+        
         var location = prompt('Enter the location:');
-        var lat = parseFloat(prompt('Enter the latitude:'));
-        var lng = parseFloat(prompt('Enter the longitude:'));
         var area = prompt('Enter the area:');
         var imageUrl = prompt('Enter the image URL:');
         var occupancy = prompt('Enter the occupancy (Rental or Family):');
@@ -347,8 +349,6 @@ function initMap() {
         // Check if any input is empty
         if (
             !location.trim() ||
-            isNaN(lat) ||
-            isNaN(lng) ||
             !area.trim() ||
             !imageUrl.trim() ||
             !occupancy.trim()
@@ -394,26 +394,29 @@ function initMap() {
         markers.push(marker);
         infoWindows.push(infoWindow);
 
-            // ... (previous code)
+        if (occupancy === 'Rental') {
+            rentalHouseCount++;
+        } else {
+            familyHouseCount++;
+        }
 
-            if (occupancy === 'Rental') {
-                rentalHouseCount++;
-            } else {
-                familyHouseCount++;
-            }
+        var familyHouseCountElement = document.getElementById('familyHouseCount');
+        if (familyHouseCountElement) {
+            familyHouseCountElement.textContent = familyHouseCount;
+        }
 
-            var familyHouseCountElement = document.getElementById('familyHouseCount');
-            if (familyHouseCountElement) {
-                familyHouseCountElement.textContent = familyHouseCount;
-            }
+        var rentalHouseCountElement = document.getElementById('rentalHouseCount');
+        if (rentalHouseCountElement) {
+            rentalHouseCountElement.textContent = rentalHouseCount;
+        }
 
-            var rentalHouseCountElement = document.getElementById('rentalHouseCount');
-            if (rentalHouseCountElement) {
-                rentalHouseCountElement.textContent = rentalHouseCount;
-            }
+        saveMarkers();
 
-            saveMarkers();
-    }
+        // Remove the click listener to prevent multiple clicks
+        google.maps.event.removeListener(this);
+    });
+}
+
 
     document.getElementById('addMarkerBtn').addEventListener('click', addMarker);
 
